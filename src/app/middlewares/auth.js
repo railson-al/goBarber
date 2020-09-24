@@ -17,6 +17,9 @@ export default async (req, res, next) => {
 
     req.userId = decoded.id;
 
+    console.log('req.userID:', req.userId);
+    console.log('decoded:', decoded);
+
     return next();
   } catch (err) {
     return res.status(401).json({ error: 'Token invalid!' });
